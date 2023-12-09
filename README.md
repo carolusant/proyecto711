@@ -24,7 +24,7 @@ Si todo ha ido bien deberia de salirnos un mensaje que nos indique estamos conec
 ![Servidor Activo](https://i.postimg.cc/SN6M1SxT/image.png)
 
 Ya deberia estar corriendo en la siguiente direccion:
-```http
+```url
 http://localhost:4000/
 ```
 ## Autenticación
@@ -42,6 +42,7 @@ POST localhost:4000/auth/
 }
 ```
 
+![Token](https://i.postimg.cc/PqG0XMjr/image.png)
 
 
 El servidor nos enviara un JSON en el cual viene un token que enviaremos en cada solicitud para poder obtener acceso a la API, de otra manera nos deja hacer nada con el endpoint `/productos`. El token es el string alfanumerico que viene como body.
@@ -50,3 +51,72 @@ El servidor nos enviara un JSON en el cual viene un token que enviaremos en cada
 
 
 
+
+
+
+## API Reference
+
+#### Get all items
+
+```http
+  GET /api/items
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+#### Get item
+
+```http
+  GET /api/items/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+
+ 
+
+
+
+
+Primero instaláremos el gestor de paquetes Yarn, para poder descargar todas las dependencias sin problemas, esto debido a que npm me creaba conflicto con vue
+
+```bash
+ npm install --global yarn
+```
+
+Luego de eso ejecutamos los siguientes comandos
+#### Instalar dependencias del proyecto
+```
+yarn install
+```
+
+#### Lints y corregir archivos
+```
+yarn lint
+```
+
+#### Compilar app y ejecutar el servidor
+```
+yarn serve
+```
+
+## Bugs
+
+Al iniciar la app nos encontramos con ese error muchas veces, llegamos a la conclusión de que era algo error de red porque los datos de esa librería esta siendo entregados mediante una CDN, y también el error se va con solo actualizar la paginas de 2-10 veces, es bien raro. Pero aparte de eso todo funciona como debería.
+
+![error de cdn?](https://i.ibb.co/RvBTtDn/err.png)
+#### Para corregir ese bug solo tenemos que actualizar la pagina varias veces
+
+## Autores
+```javascript
+Carlos Antonio Gonzales Garza 20192000980
+Jeyson Samuel Mejia Hernandez 20172002003
+```
+
+## Licencia
+
+[MIT](https://choosealicense.com/licenses/mit/)
