@@ -160,9 +160,9 @@ DELETE localhost:4000/productos/
 
 ### NOTA
 ```json
-El endpoint de "/usuarios" se creó solo para poder crear usuarios de una manera un poco más robusta (con 2 tablas para poder aplicar seguridad) y por conveniencia 'NO tiene protección de rutas.'
+["El endpoint de "/usuarios" se creó solo para poder crear usuarios de una manera un poco más robusta (con 2 tablas para poder aplicar seguridad) y por conveniencia 'NO tiene protección de rutas.'
 
-Puede agregar nuevos usuarios haciendo un POST al endpoint /usuarios/ y pasandole un JSON en el body el cual debe ir con los siguientes datos: 
+Puede agregar nuevos usuarios haciendo un POST al endpoint /usuarios/ y pasandole un JSON en el body el cual debe ir con los siguientes datos: "]
 
   {
     "id":0,
