@@ -12,6 +12,8 @@
  ## Instalación
 Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL. Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos allí damos click a **Importar** y luego seleccionamos el archivo `tienda.sql` que se ha proporcionado.
 
+Otra alternativa de servidor que permite crear y probar aplicaciones o páginas web [wamp](https://sourceforge.net/projects/wampserver/files/latest/download) (Windows Apache MySQL PHP).
+
 ![Importar BD](https://i.postimg.cc/9f4rGCRQ/image.png)
 
 Una vez se haya creado la base de datos con sus registros correspondientes, procederemos a clonar el repositorio a la computadora, una vez descargado, ir a la carpeta raíz llamada **proyecto** y ejecute el siguiente comando para instalar todas las dependencias necesarias para ejecutar el proyecto
