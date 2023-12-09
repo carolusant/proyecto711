@@ -6,7 +6,7 @@
 
  ## Instalación
 
-Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL. Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos alli damos click a **Importar** y luego seleccionamos el archivo .sql que se ha proporcionado.
+Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL. Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos alli damos click a **Importar** y luego seleccionamos el archivo `tienda.sql` que se ha proporcionado.
 
 
 ![Importar BD](https://i.postimg.cc/9f4rGCRQ/image.png)
@@ -42,81 +42,73 @@ POST localhost:4000/auth/
 }
 ```
 
-![Token](https://i.postimg.cc/PqG0XMjr/image.png)
+###### Estaremos utilizando Postman para realizar las pruebas a la API
+![post a login](https://i.postimg.cc/PqG0XMjr/image.png)
 
 
 El servidor nos enviara un JSON en el cual viene un token que enviaremos en cada solicitud para poder obtener acceso a la API, de otra manera nos deja hacer nada con el endpoint `/productos`. El token es el string alfanumerico que viene como body.
 
-![Token](https://i.postimg.cc/HxNwmBq6/image.png)
+![Token recibido](https://i.postimg.cc/HxNwmBq6/image.png)
 
 
+## Operaciones sobre el endpoint `/productos/`
+Ahora pasaremos a demostrar las operaciones CRUD que se pueden realizar sobre el endpoint de `/productos` mediante el manejo de los verbos http que se nos solicitaron en los requerimientos del proyecto. 
 
-
-
-
-## API Reference
-
-#### Get all items
+### Verbo GET - Operación READ
+Empezaremos haciendo un `GET` a ese endpoint para obtener todos los productos guardados en la base de datos, para ellos nos vamos a la ruta dada y en la opción que dice `Authorization` vamos seleccionar el `Type` como `Bearer Token` y en la casilla de texto que se nos despliega introduciremos el token que nos vino en el request anterior.
 
 ```http
-  GET /api/items
+GET localhost:4000/productos/
 ```
+![GET](https://i.postimg.cc/c1jpkWbn/image.png)
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+Con eso obtendriamos acceso a la API y se nos mostraria el JSON en el cual viene en el codigo de respuesta y todos los productos almacenados en la base de datos.
 
-#### Get item
+![response get](https://i.postimg.cc/Pxkxw7gL/image.png)
 
+### Verbo POST - Operación CREATE
+Haciendo un `POST` a ese mismo endpoint podremos crear productos, de igual manera necesitaremos enviar el token de la misma manera que lo hicimos anteriormente y en el body deberemos enviar el JSON con los datos del nuevo producto que deseamos agregar.
+
+###### Ruta
 ```http
-  GET /api/items/${id}
+POST localhost:4000/productos/
+```
+###### Body
+`el id debe ser 0 para indicarle a la bd que es un nuevo producto`
+```json
+{
+  "id": 0,
+  "nombre": "Licuadora Ninja 3421",
+  "categoria": "Hogar",
+  "precio": 13500
+}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+Como podemos observar al enviar la peticion obtenemos una respuesta que nos dice que el producto se ha agregado exitosamente y de igual manera si nos vamos para el [PhpMyAdmin](http://localhost/phpmyadmin) vamos a poder observar que ese registro a ha sido agregado a la base de datos. 
 
-
- 
+![post productos](https://i.postimg.cc/wTKpTJdv/image.png)
 
 
 
 
-Primero instaláremos el gestor de paquetes Yarn, para poder descargar todas las dependencias sin problemas, esto debido a que npm me creaba conflicto con vue
+### Verbo PUT - Operación UPDATE
 
-```bash
- npm install --global yarn
-```
 
-Luego de eso ejecutamos los siguientes comandos
-#### Instalar dependencias del proyecto
-```
-yarn install
-```
 
-#### Lints y corregir archivos
-```
-yarn lint
-```
 
-#### Compilar app y ejecutar el servidor
-```
-yarn serve
-```
 
-## Bugs
+### Verbo DELETE - Operación DELETE
 
-Al iniciar la app nos encontramos con ese error muchas veces, llegamos a la conclusión de que era algo error de red porque los datos de esa librería esta siendo entregados mediante una CDN, y también el error se va con solo actualizar la paginas de 2-10 veces, es bien raro. Pero aparte de eso todo funciona como debería.
 
-![error de cdn?](https://i.ibb.co/RvBTtDn/err.png)
-#### Para corregir ese bug solo tenemos que actualizar la pagina varias veces
 
-## Autores
-```javascript
-Carlos Antonio Gonzales Garza 20192000980
-Jeyson Samuel Mejia Hernandez 20172002003
-```
 
-## Licencia
 
-[MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+
+
+
+##### postasdasdadas
+
+
