@@ -155,12 +155,26 @@ DELETE localhost:4000/productos/
 ![DELETE postman](https://i.postimg.cc/HxtDnv09/image.png)
 
 
-
+##
+##
 
 ### NOTA
-```bash
-El endpoint de "/usuarios" se creó solo para poder crear usuarios de una manera un poco más robusta (con 2 tablas para poder aplicar seguridad) y por conveniencia 'NO tiene protección de rutas.
+```json
+El endpoint de "/usuarios" se creó solo para poder crear usuarios de una manera un poco más robusta (con 2 tablas para poder aplicar seguridad) y por conveniencia 'NO tiene protección de rutas.'
+
+Puede agregar nuevos usuarios haciendo un POST al endpoint /usuarios/ y pasandole un JSON en el body el cual debe ir con los siguientes datos: 
+
+  {
+    "id":0,
+    "nombre":"nombreUsuario",
+    "usuario":"usuarioLogin",
+    "password":"pass",
+    "activo":1
+  }
+
+
 ```
+
 
 ### NOTA 2
 ###### LO DE LOS CORS SE LO QUEDAMOS DEBIENDO...
