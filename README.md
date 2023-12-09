@@ -10,7 +10,7 @@
 - [@JulioAGuevara](https://github.com/JulioAGuevara) - Julio Alejandro Guevara Ramirez - 20212100089
 
  ## Instalación
-Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL. Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos allí damos click a **Importar** y luego seleccionamos el archivo `tienda.sql` que se ha proporcionado.
+Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL (Aunque se puede hacer uso de un servidor MySQL+PHP de su preferencia). Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos allí damos click a **Importar** y luego seleccionamos el archivo `tienda.sql` que se ha proporcionado.
 
 ![Importar BD](https://i.postimg.cc/9f4rGCRQ/image.png)
 
