@@ -52,7 +52,7 @@ POST localhost:4000/auth/
 ![post a login](https://i.postimg.cc/PqG0XMjr/image.png)
 
 
-El servidor nos enviará un JSON en el cual viene un token que enviaremos en cada solicitud para poder obtener acceso a la API, de otra manera no nos deja hacer nada con el endpoint `/productos`. El token es el string alfanumérico que viene como body.
+El servidor nos enviará un JSON el cual contiene un token que enviaremos en cada solicitud para poder obtener acceso a la API, de otra manera no nos deja hacer nada con el endpoint `/productos`. El token es el string alfanumérico que viene como body.
 
 ![Token recibido](https://i.postimg.cc/HxNwmBq6/image.png)
 
