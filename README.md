@@ -92,7 +92,7 @@ GET localhost:4000/productos/6
 ![por id](https://i.postimg.cc/YCQ0n0Xh/image.png)
 
 Y podemos enviar una categoria como parametro para filtrar productos por categoria.
-```
+```http
 GET localhost:4000/productos?categoria="Hogar"
 ```
 ![por cate](https://i.postimg.cc/WznLqRSp/image.png)
