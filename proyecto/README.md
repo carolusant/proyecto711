@@ -10,7 +10,7 @@
 - [@JulioAGuevara](https://github.com/JulioAGuevara) - Julio Alejandro Guevara Ramirez - 20212100089
 
  ## Instalación
-Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL. Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos allí damos click a **Importar** y luego seleccionamos el archivo `tienda.sql` que se ha proporcionado.
+Empezaremos preparando nuestra base de datos, para eso primero instalaremos [xampp](https://www.apachefriends.org/download.html) para crear un servidor local con MySQL (Aunque se puede hacer uso de un servidor MySQL+PHP de su preferencia). Abrimos el PhpMyAdmin el cual esta ubicado en el [localhost](http://localhost/phpmyadmin/), una vez estemos allí damos click a **Importar** y luego seleccionamos el archivo `tienda.sql` que se ha proporcionado.
 
 Otra alternativa de servidor que permite crear y probar aplicaciones o páginas web [wamp](https://sourceforge.net/projects/wampserver/files/latest/download) (Windows Apache MySQL PHP).
 
@@ -54,7 +54,7 @@ POST localhost:4000/auth/
 ![post a login](https://i.postimg.cc/PqG0XMjr/image.png)
 
 
-El servidor nos enviará un JSON en el cual viene un token que enviaremos en cada solicitud para poder obtener acceso a la API, de otra manera no nos deja hacer nada con el endpoint `/productos`. El token es el string alfanumérico que viene como body.
+El servidor nos enviará un JSON el cual contiene un token que enviaremos en cada solicitud para poder obtener acceso a la API, de otra manera no nos deja hacer nada con el endpoint `/productos`. El token es el string alfanumérico que viene como body.
 
 ![Token recibido](https://i.postimg.cc/HxNwmBq6/image.png)
 
@@ -84,6 +84,18 @@ Si no se envía token o este está incorrecto obtendremos un mensaje que de erro
 ![sin token](https://i.postimg.cc/8CV8TV80/image.png)
 ###### Token incorrecto
 ![mal token](https://i.postimg.cc/3Rnzj4ks/image.png)
+
+La API nos permite poder enviar el id del producto queramos obtener directamente
+```http
+GET localhost:4000/productos/6
+```
+![por id](https://i.postimg.cc/YCQ0n0Xh/image.png)
+
+Y podemos enviar una categoria como parametro para filtrar productos por categoria.
+```http
+GET localhost:4000/productos?categoria="Hogar"
+```
+![por cate](https://i.postimg.cc/WznLqRSp/image.png)
 
 
 
@@ -161,11 +173,12 @@ DELETE localhost:4000/productos/
 ##
 
 ### NOTA
+El endpoint de `/usuarios` se creó solo para poder crear usuarios de una manera un poco más robusta
+ (con 2 tablas para poder aplicar seguridad) y por conveniencia 'NO tiene protección de rutas.'
+
+Puede agregar nuevos usuarios haciendo un `POST` al endpoint `localhost:4000/usuarios/` y pasandole un JSON en el body el cual debe ir con los siguientes datos:
+
 ```json
-'El endpoint de "/usuarios" se creó solo para poder crear usuarios de una manera un poco más robusta (con 2 tablas para poder aplicar seguridad) y por conveniencia 'NO tiene protección de rutas.'
-
-Puede agregar nuevos usuarios haciendo un POST al endpoint /usuarios/ y pasandole un JSON en el body el cual debe ir con los siguientes datos:'
-
   {
     "id":0,
     "nombre":"nombreUsuario",
