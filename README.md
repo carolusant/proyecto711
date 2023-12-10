@@ -86,11 +86,15 @@ Si no se envía token o este está incorrecto obtendremos un mensaje que de erro
 ![mal token](https://i.postimg.cc/3Rnzj4ks/image.png)
 
 La API nos permite poder enviar el id del producto queramos obtener directamente
-`GET localhost:4000/productos/6`
+```http
+GET localhost:4000/productos/6
+```
 ![por id](https://i.postimg.cc/YCQ0n0Xh/image.png)
 
 Y podemos enviar una categoria como parametro para filtrar productos por categoria.
-`GET localhost:4000/productos?categoria="Hogar"`
+```
+GET localhost:4000/productos?categoria="Hogar"
+```
 ![por cate](https://i.postimg.cc/WznLqRSp/image.png)
 
 
